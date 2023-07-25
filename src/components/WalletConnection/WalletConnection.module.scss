@@ -1,0 +1,35 @@
+.button {
+  min-width: 170px;
+  padding: 8px 12px;
+  margin: 6px 0px;
+  &:hover {
+    outline: 2px solid #3b8a4a;
+    color: #73f38a;
+  }
+  span:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.buttonBgMetaMask {
+  @extend .button;
+  background-color: #8a713b;
+  &:hover {
+    outline: none;
+    color: rgba(255, 255, 255, 0.87);
+  }
+}
+
+.buttonBgConnect {
+  @extend .button;
+  background-color: #3b8a4a;
+  &:hover {
+    outline: 2px solid #8a3b3b;
+
+    color: rgba(255, 176, 176, 0.87);
+  }
+}
+
+.balance {
+  margin-right: 20px;
+}

@@ -1,0 +1,54 @@
+.wrapper {
+  margin-top: 50px;
+  border-radius: 16px;
+  background-color: #17191d;
+  outline: #23252a solid 2px;
+  &Connected {
+    @extend .wrapper;
+    outline: 2px solid #3b8a4a;
+  }
+  @media screen and (min-width: 750px) {
+    margin-top: 100px;
+  }
+  @media screen and (min-width: 1024px) {
+    // margin-top: 150px;
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 12px;
+
+  @media screen and (min-width: 750px) {
+    padding: 60px 60px;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    span {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    input {
+      outline: none;
+      border: none;
+      border-radius: 8px;
+      padding: 8px;
+      text-align: center;
+      &:last-child {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  button {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6px 30px;
+    &:hover {
+      outline: 2px solid #3b8a4a;
+      color: #73f38a;
+    }
+  }
+}
