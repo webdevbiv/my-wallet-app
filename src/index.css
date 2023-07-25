@@ -16,14 +16,19 @@
   -moz-text-size-adjust: 100%;
 }
 
-#root {
+body {
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 main {
-  flex: 1;
+  flex: 1 0 auto;
+}
+
+header,
+footer {
+  flex-shrink: 0;
 }
 
 div {
