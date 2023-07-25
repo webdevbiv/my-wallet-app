@@ -11,7 +11,7 @@ const WalletForm = () => {
 
   const validateInputs = () => {
     if (!account) {
-      alert("Connect your wallet first!");
+      alert("Please connect your wallet first!");
       return false;
     }
 
@@ -85,11 +85,11 @@ const WalletForm = () => {
         <form onSubmit={handleSubmit} className={s.formGroup}>
           <label>
             <span> Receiver wallet:</span>
-            <input value={receiver} type="text" placeholder="Enter receiver wallet address" required onChange={(e) => setReceiver(e.target.value)} />
+            <input value={receiver} type="text" placeholder="Enter receiver wallet address" onChange={(e) => setReceiver(e.target.value)} />
           </label>
           <label>
             <span>Amount:</span>
-            <input value={amount} type="number" min="0.000001" step="0.000001" placeholder="Enter amount" required onChange={(e) => setAmount(e.target.value)} />
+            <input value={amount} type="number" min="0.000001" step="0.000001" placeholder="Enter amount" onChange={(e) => setAmount(e.target.value)} />
           </label>
           <button type="submit">{isLoading ? <ThreeDots height="24" width="36" radius="9" color="rgba(255, 255, 255, 0.87)" ariaLabel="three-dots-loading" wrapperStyle={{}} wrapperClassName="" visible={true} /> : "Send"}</button>
         </form>
