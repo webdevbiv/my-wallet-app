@@ -30,6 +30,9 @@ const WalletConnection = () => {
       const handler = (accounts) => {
         if (accounts.length === 0) {
           // MetaMask is locked or the user has not connected any accounts
+          setAccount(null);
+          setShortAccount(null);
+          setBalance(null);
           toast.warn("Please connect to MetaMask.");
         } else if (accounts[0] !== account) {
           setAccount(accounts[0]);
