@@ -1,24 +1,15 @@
 .wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 20px 0;
 }
 
 .link {
   display: flex;
   align-items: center;
-  min-width: 91px;
 
   &:hover {
     color: #73f38a;
-  }
-
-  &:not(:last-child) {
-    margin-right: 40px;
-
-    @media screen and (min-width: 750px) {
-      margin-right: 120px;
-    }
   }
 
   svg {
