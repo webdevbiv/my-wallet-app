@@ -27,9 +27,6 @@ main {
 footer {
   position: sticky;
   bottom: 0;
-  @media screen and (min-width: 375px) {
-    position: static;
-  }
 }
 
 *,
