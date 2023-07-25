@@ -4,6 +4,7 @@ import { Buffer } from "buffer";
 import { ThreeDots } from "react-loader-spinner";
 import { WalletContext } from "../../context/WalletContext";
 import s from "./WalletConnection.module.scss";
+import { toast } from "react-toastify";
 
 window.Buffer = Buffer;
 
@@ -29,7 +30,7 @@ const WalletConnection = () => {
       const handler = (accounts) => {
         if (accounts.length === 0) {
           // MetaMask is locked or the user has not connected any accounts
-          console.log("Please connect to MetaMask.");
+          toast.warn("Please connect to MetaMask.");
         } else if (accounts[0] !== account) {
           setAccount(accounts[0]);
           setShortAccount(`${accounts[0].slice(0, 5)}...${accounts[0].slice(-4)}`);
@@ -73,12 +74,24 @@ const WalletConnection = () => {
         console.log(err);
         setConnectMetaMask(false);
         setIsLoading(false);
-        alert("User denied account access to MetaMask");
+        if (err.code === -32002) {
+          toast.warn("Please finish connecting to MetaMask");
+          return;
+        }
+        toast.warn("User denied account access to MetaMask");
       }
     } else {
       setConnectMetaMask(false);
       setIsLoading(false);
-      alert("Please install MetaMask!");
+      toast.warn(
+        <div className={s.toastWrapper}>
+          <span className={s.toastLink}>
+            <a target="_blank" rel="noopener noreferrer" href="https://metamask.io/download/">
+              Follow this link to install: MetaMask
+            </a>
+          </span>
+        </div>
+      );
     }
   };
 

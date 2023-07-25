@@ -7,7 +7,8 @@ import Main from "../Main/Main";
 import WalletConnection from "../WalletConnection/WalletConnection";
 import WalletForm from "../WalletForm/WalletForm";
 import { FooterLinks } from "../FooterLinks/FooterLinks";
-// import s from "./App.module.scss";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [account, setAccount] = useState(null);
@@ -15,6 +16,7 @@ function App() {
   return (
     <>
       <WalletContext.Provider value={{ account, setAccount, balance, setBalance }}>
+        <ToastContainer position="top-center" autoClose={5000} limit={2} hideProgressBar={true} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss={false} draggable={false} pauseOnHover={false} theme="dark" />
         <Header>
           <Logo />
           <WalletConnection />

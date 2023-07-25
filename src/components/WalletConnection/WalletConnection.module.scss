@@ -33,3 +33,15 @@
 .balance {
   margin-right: 20px;
 }
+
+.toast {
+  &Wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &Link {
+    &:hover {
+      color: #73f38a;
+    }
+  }
+}
