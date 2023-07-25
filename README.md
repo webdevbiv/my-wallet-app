@@ -21,4 +21,3 @@ My Wallet App is a web-based Ethereum wallet application. It allows users to con
 - [React Toastify](https://www.npmjs.com/package/react-toastify) - A library for adding notifications to your React app.
 - [Ethers.js](https://docs.ethers.org/v6/) - A complete Ethereum wallet implementation and utilities in JavaScript and TypeScript.
 - [Sass](https://sass-lang.com/) - A CSS preprocessor, which adds special features such as variables, nested rules and mixins (sometimes referred to as syntactic sugar) into regular CSS.
-- [ESLint](https://eslint.org/) - A tool for identifying and reporting on patterns in JavaScript, helping to make code more consistent and avoiding bugs.
