@@ -1,4 +1,4 @@
-export const FooterLink = () => {
+export const FooterLinks = () => {
   return (
     <div>
       <a href="">Link to repository</a>

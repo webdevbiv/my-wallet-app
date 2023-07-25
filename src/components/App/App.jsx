@@ -6,7 +6,7 @@ import Logo from "../Logo/Logo";
 import Main from "../Main/Main";
 import WalletConnection from "../WalletConnection/WalletConnection";
 import WalletForm from "../WalletForm/WalletForm";
-import { FooterLink } from "../FooterLink/FooterLink";
+import { FooterLinks } from "../FooterLinks/FooterLinks";
 // import s from "./App.module.scss";
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
           <WalletForm />
         </Main>
         <Footer>
-          <FooterLink />
+          <FooterLinks />
         </Footer>
       </WalletContext.Provider>
     </>
