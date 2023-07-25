@@ -16,12 +16,12 @@ function App() {
   return (
     <>
       <WalletContext.Provider value={{ account, setAccount, balance, setBalance }}>
-        <ToastContainer position="top-center" autoClose={5000} limit={2} hideProgressBar={true} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss={false} draggable={false} pauseOnHover={false} theme="dark" />
         <Header>
           <Logo />
           <WalletConnection />
         </Header>
         <Main>
+          <ToastContainer position="top-center" autoClose={5000} limit={2} hideProgressBar={true} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss={false} draggable={false} pauseOnHover={false} theme="dark" />
           <WalletForm />
         </Main>
         <Footer>
