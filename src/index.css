@@ -16,8 +16,9 @@
   -moz-text-size-adjust: 100%;
 }
 
+html,
 body {
-  height: 100vh;
+  height: 100%;
 }
 
 #root {
