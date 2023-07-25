@@ -18,12 +18,16 @@
 
 body {
   height: 100vh;
+}
+
+#root {
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 main {
-  flex: 1 0 auto;
+  flex: 1;
 }
 
 header,
