@@ -70,6 +70,7 @@ const WalletConnection = () => {
           setIsLoading(false);
         });
       } catch (err) {
+        console.log(err);
         setConnectMetaMask(false);
         setIsLoading(false);
         alert("User denied account access to MetaMask");

@@ -8,12 +8,19 @@
   display: flex;
   align-items: center;
   min-width: 91px;
+
   &:hover {
     color: #73f38a;
   }
+
   &:not(:last-child) {
     margin-right: 40px;
+
+    @media screen and (min-width: 750px) {
+      margin-right: 120px;
+    }
   }
+
   svg {
     margin-right: 10px;
     size: "30";
