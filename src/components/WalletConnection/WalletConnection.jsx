@@ -87,13 +87,11 @@ const WalletConnection = () => {
       setConnectMetaMask(false);
       setIsLoading(false);
       toast.warn(
-        <div className={s.toastWrapper}>
-          <span className={s.toastLink}>
-            <a target="_blank" rel="noopener noreferrer" href="https://metamask.io/download/">
-              Follow this link to install: MetaMask
-            </a>
-          </span>
-        </div>
+        <a target="_blank" rel="noopener noreferrer" href="https://metamask.io/download/">
+          <div className={s.toastWrapper}>
+            <span className={s.toastLink}>Follow this link to install: MetaMask</span>
+          </div>
+        </a>
       );
     }
   };
