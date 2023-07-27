@@ -31,7 +31,7 @@ const WalletForm = () => {
     }
 
     const decimalAmount = parseFloat(amount);
-    if (decimalAmount < 0.000001 || decimalAmount > 100000 || !Number.isFinite(decimalAmount)) {
+    if (decimalAmount < 0 || decimalAmount < 0.000001 || decimalAmount > 100000 || !Number.isFinite(decimalAmount)) {
       toast.warn("Please enter a valid amount between 0.000001 and 100000.");
       return;
     }
@@ -94,7 +94,7 @@ const WalletForm = () => {
           </label>
           <label>
             <span>Amount:</span>
-            <input value={amount} type="number" step="0.000001" placeholder="Enter amount" onChange={(e) => setAmount(e.target.value)} />
+            <input value={amount} type="number" min="0.000001" step="0.000001" placeholder="Enter amount" onChange={(e) => setAmount(e.target.value)} />
           </label>
           <button type="submit">{isLoading ? <ThreeDots height="24" width="36" radius="9" color="rgba(255, 255, 255, 0.87)" ariaLabel="three-dots-loading" wrapperStyle={{}} wrapperClassName="" visible={true} /> : "Send"}</button>
         </form>
