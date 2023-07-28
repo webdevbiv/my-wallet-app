@@ -9,7 +9,8 @@ import { toast } from "react-toastify";
 window.Buffer = Buffer;
 
 const WalletConnection = () => {
-  const { account, setAccount, balance, setBalance } = useContext(WalletContext);
+  const { account, setAccount, balance, setBalance } =
+    useContext(WalletContext);
   const [shortAccount, setShortAccount] = useState(null);
 
   const [isLoading, setIsLoading] = useState(false);
@@ -36,7 +37,9 @@ const WalletConnection = () => {
           toast.warn("Please connect to MetaMask.");
         } else if (accounts[0] !== account) {
           setAccount(accounts[0]);
-          setShortAccount(`${accounts[0].slice(0, 5)}...${accounts[0].slice(-4)}`);
+          setShortAccount(
+            `${accounts[0].slice(0, 5)}...${accounts[0].slice(-4)}`
+          );
           updateBalance(accounts[0]);
         }
       };
@@ -45,7 +48,7 @@ const WalletConnection = () => {
 
       return () => window.ethereum.removeListener("accountsChanged", handler);
     }
-  }, [account, setAccount, updateBalance]);
+  }, [account, setAccount, updateBalance, setBalance]);
 
   const handleMetaMask = async () => {
     if (account || isLoading) {
@@ -59,7 +62,9 @@ const WalletConnection = () => {
         setIsLoading(true);
         setConnectMetaMask(true);
 
-        await window.ethereum.request({ method: "eth_requestAccounts" });
+        await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
         setConnectMetaMask(false);
 
         const signer = provider.getSigner();
@@ -87,9 +92,15 @@ const WalletConnection = () => {
       setConnectMetaMask(false);
       setIsLoading(false);
       toast.warn(
-        <a target="_blank" rel="noopener noreferrer" href="https://metamask.io/download/">
+        <a
+          target='_blank'
+          rel='noopener noreferrer'
+          href='https://metamask.io/download/'
+        >
           <div className={s.toastWrapper}>
-            <span className={s.toastLink}>Follow this link to install: MetaMask</span>
+            <span className={s.toastLink}>
+              Follow this link to install: MetaMask
+            </span>
           </div>
         </a>
       );
@@ -110,12 +121,36 @@ const WalletConnection = () => {
   };
 
   return (
-    <button type="button" onClick={account ? handleDisconnect : handleMetaMask} className={connectMetaMask ? s.buttonBgMetaMask : account ? s.buttonBgConnect : s.button}>
+    <button
+      type='button'
+      onClick={account ? handleDisconnect : handleMetaMask}
+      className={
+        connectMetaMask
+          ? s.buttonBgMetaMask
+          : account
+          ? s.buttonBgConnect
+          : s.button
+      }
+    >
       {isLoading ? (
         connectMetaMask ? (
           <span>Connect MetaMask</span>
         ) : (
-          <ThreeDots height="24px" maxWidth="170px" radius="9" center color="white" ariaLabel="three-dots-loading" wrapperStyle={{ display: "flex", justifyContent: "center", alignItems: "center" }} wrapperClassName="" visible={true} />
+          <ThreeDots
+            height='24px'
+            maxWidth='170px'
+            radius='9'
+            center
+            color='white'
+            ariaLabel='three-dots-loading'
+            wrapperStyle={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            wrapperClassName=''
+            visible={true}
+          />
         )
       ) : account ? (
         <>
